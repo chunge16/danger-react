@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <img style={{width: '50%'}} src={logo} alt={''}/>
-      <Icon name={'iconauto'} style={{fontSize: '18px', color: 'red'}}/>
+      <Icon name={'iconauto'} className={'icon-color'} />
     </div>
   )
 }
