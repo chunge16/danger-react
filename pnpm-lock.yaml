@@ -5,8 +5,8 @@ specifiers:
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
   '@vitejs/plugin-react': ^1.3.0
+  classnames: ^2.3.1
   postcss: ^8.4.14
-  postcss-load-config: ^4.0.1
   postcss-preset-env: ^7.7.2
   react: ^18.0.0
   react-dom: ^18.0.0
@@ -14,6 +14,7 @@ specifiers:
   vite: ^2.9.9
 
 dependencies:
+  classnames: 2.3.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -23,7 +24,6 @@ devDependencies:
   '@types/react-dom': 18.0.5
   '@vitejs/plugin-react': 1.3.2
   postcss: 8.4.14
-  postcss-load-config: 4.0.1_postcss@8.4.14
   postcss-preset-env: 7.7.2_postcss@8.4.14
   typescript: 4.7.4
   vite: 2.9.12
@@ -561,6 +561,10 @@ packages:
       supports-color: 5.5.0
     dev: true
 
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
+
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
@@ -920,11 +924,6 @@ packages:
     hasBin: true
     dev: true
 
-  /lilconfig/2.0.5:
-    resolution: {integrity: sha512-xaYmXZtTHPAw5m+xLN8ab9C+3a8YmV3asNSPOATITbtwrfbwaLJj8h66H1WMIpALCkqsIzK3h7oQ+PdX+LQ9Eg==}
-    engines: {node: '>=10'}
-    dev: true
-
   /loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
@@ -1139,23 +1138,6 @@ packages:
       '@csstools/postcss-progressive-custom-properties': 1.3.0_postcss@8.4.14
       postcss: 8.4.14
       postcss-value-parser: 4.2.0
-    dev: true
-
-  /postcss-load-config/4.0.1_postcss@8.4.14:
-    resolution: {integrity: sha512-vEJIc8RdiBRu3oRAI0ymerOn+7rPuMvRXslTvZUKZonDHFIczxztIyJ1urxM1x9JXEikvpWWTUUqal5j/8QgvA==}
-    engines: {node: '>= 14'}
-    peerDependencies:
-      postcss: '>=8.0.9'
-      ts-node: '>=9.0.0'
-    peerDependenciesMeta:
-      postcss:
-        optional: true
-      ts-node:
-        optional: true
-    dependencies:
-      lilconfig: 2.0.5
-      postcss: 8.4.14
-      yaml: 2.1.1
     dev: true
 
   /postcss-logical/5.0.4_postcss@8.4.14:
@@ -1443,9 +1425,4 @@ packages:
       rollup: 2.75.7
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
-
-  /yaml/2.1.1:
-    resolution: {integrity: sha512-o96x3OPo8GjWeSLF+wOAbrPfhFOGY0W00GNaxCDv+9hkcDJEnev1yh8S7pgHF0ik6zc8sQLuL8hjHjJULZp8bw==}
-    engines: {node: '>= 14'}
     dev: true
