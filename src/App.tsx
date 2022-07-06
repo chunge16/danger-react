@@ -7,8 +7,8 @@ function App() {
 
   return (
     <div className="App">
-      <img style={{width: '50%'}} src={logo} alt={''}/>
-      <Icon name={'iconauto'} className={'icon-color'} />
+      <img className={'App-logo'} style={{width: '50%'}} src={logo} alt={''}/>
+      <Icon name={'iconauto'} className={'icon-color'} style={{color: 'red'}} rotate={60} spin/>
     </div>
   )
 }

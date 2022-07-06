@@ -1,7 +1,29 @@
-.svg-icon {
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
+
+.action {
+    text-align: center;
+    vertical-align: -0.125em;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    font-style: normal;
+    & .svg-icon {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        fill: currentColor;
+        overflow: hidden;
+    }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .icon-spin-animation {
+        display: inline-block;
+        animation: icon-spin 1s infinite linear;
+    }
+}
+
+@keyframes icon-spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
