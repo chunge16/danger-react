@@ -1,0 +1,18 @@
+// Vitest Snapshot v1
+
+exports[`Icon test > Icon should render 1`] = `
+<div>
+  <span
+    class="action"
+  >
+    <svg
+      class="svg-icon"
+      data-testid="test-icon"
+    >
+      <use
+        xlink:href="#iconauto"
+      />
+    </svg>
+  </span>
+</div>
+`;
