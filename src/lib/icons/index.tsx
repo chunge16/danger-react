@@ -19,13 +19,15 @@ const Icon: React.FunctionComponent<IconProps> = (props) => {
     ...restProps
   } = props;
 
-  let styleObj;
-  if (rotate){
-    styleObj = {
-      ...style,
-      transform: `rotate(${rotate || 0}deg)`
-    }
-  }
+  let styleObj = rotate
+      ? {
+        ...style,
+        transform: `rotate(${rotate}deg)`
+      }
+      : {
+        ...style,
+      };
+
   return (
       <span
           className={classes('action', {'icon-spin-animation': spin}, className)}
