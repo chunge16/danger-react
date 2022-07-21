@@ -1,11 +1,43 @@
 version: 2.1
+orbs: 
+  node: circleci/node@5.0.2
+    
+docker: &docker
+  docker:
+      - image: 'cimg/base:stable'
+
+
 jobs:
-  build:
-    docker:
-      - image: alpine:3.15
+  setup:
+    <<: *docker
     steps:
+      - checkout
       - run:
-          name: The First Step
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+          name: Nodejs Version
+          command: node --version
+      - run:
+          name: install -g pnpm
+          command: npm intall -g pnpm
+      - run: 
+          name: pnpm Version
+          command: pnpm --version
+      
+  build:
+    <<: *docker
+    steps:
+      - checkout
+      - run: 
+         name: bulid
+         command: echo "this is bulid"
+      - run:
+          name: pnpm Version
+          command: pnpm --version
+
+
+workflows:
+  test_my_app:
+    jobs:
+      - setup
+      - build
+  
+  
