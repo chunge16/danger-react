@@ -12,7 +12,9 @@ jobs:
           override-ci-command: pnpm install
       - run:
           name: Nodejs Version
-          command: node --version
+          command: | 
+            node --version
+            pnpm --version
       - run: 
           name: pnpm build
           command: pnpm run bulid
