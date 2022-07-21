@@ -7,14 +7,14 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          override-ci-command: pnpm install
       - run:
           name: Nodejs Version
           command: | 
             node --version
             pnpm --version
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: pnpm install
       - run: 
           name: pnpm build
           command: pnpm run bulid
