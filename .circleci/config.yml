@@ -4,12 +4,12 @@ orbs:
     
 docker: &docker
   docker:
-      - image: 'cimg/base:stable'
+    - image: 'cimg/base:stable'
 
 
 jobs:
   setup:
-    <<: *docker
+    executor: node/default
     steps:
       - checkout
       - run:
@@ -23,7 +23,7 @@ jobs:
           command: pnpm --version
       
   build:
-    <<: *docker
+    executor: node/default
     steps:
       - checkout
       - run: 
