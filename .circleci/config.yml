@@ -14,7 +14,7 @@ jobs:
             npm install -g pnpm
       - run: 
           name: pnpm install
-          command: pnpm i
+          command: pnpm i --frozen-lockfile
       - run: 
           name: pnpm build
           command: pnpm run bulid
