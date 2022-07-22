@@ -14,7 +14,7 @@ jobs:
             pnpm --version
       - node/install-packages:
           cache-path: ~/project/node_modules
-          override-ci-command: pnpm install
+          override-ci-command: pnpm i --frozen-lockfile
       - run: 
           name: pnpm build
           command: pnpm run bulid
