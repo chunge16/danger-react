@@ -11,6 +11,7 @@ jobs:
           name: Nodejs Version
           command: | 
             node --version
+            npm install -g pnpm
       - node/install-packages:
           cache-path: ~/project/node_modules
           override-ci-command: pnpm i --frozen-lockfile
