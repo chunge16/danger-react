@@ -11,10 +11,12 @@ jobs:
           name: Nodejs Version
           command: | 
             node --version
-            pnpm --version
       - node/install-packages:
           cache-path: ~/project/node_modules
           override-ci-command: pnpm i --frozen-lockfile
+      - run: 
+          name: pnpm Version
+          command: pnpm --version
       - run: 
           name: pnpm build
           command: pnpm run bulid
@@ -24,18 +26,16 @@ jobs:
       - checkout
       - node/install-packages:
           cache-path: ~/project/node_modules
-          override-ci-command: pnpm install
+          override-ci-command: pnpm i --frozen-lockfile
+      - run: 
+          name: pnpm Version
+          command: pnpm --version
       - run:
           name: pnpm test
           command: pnpm run test:run
 workflows:
   test_my_app:
     jobs:
-      - node/run:
-          setup:
-            - run: 
-                name: install -g pnpm
-                command: npm install -g pnpm
       - build
       - test:
           requires:
