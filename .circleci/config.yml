@@ -12,12 +12,9 @@ jobs:
           command: | 
             node --version
             npm install -g pnpm
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          override-ci-command: pnpm i --frozen-lockfile
       - run: 
-          name: pnpm Version
-          command: pnpm --version
+          name: pnpm install
+          command: pnpm i
       - run: 
           name: pnpm build
           command: pnpm run bulid
