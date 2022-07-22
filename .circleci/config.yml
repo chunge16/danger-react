@@ -17,17 +17,19 @@ jobs:
           command: pnpm install --no-frozen-lockfile
       - run: 
           name: pnpm build
-          command: pnpm run bulid
+          command: pnpm run build
   test:
     executor: node/default
     steps:
       - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          override-ci-command: pnpm i --frozen-lockfile
+      - run:
+          name: Nodejs Version
+          command: | 
+            node --version
+            npm install -g pnpm
       - run: 
-          name: pnpm Version
-          command: pnpm --version
+          name: pnpm install
+          command: pnpm install --no-frozen-lockfile
       - run:
           name: pnpm test
           command: pnpm run test:run
