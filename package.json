@@ -1,7 +1,16 @@
 {
   "name": "danger-react",
-  "private": true,
+  "private": false,
   "version": "0.0.1",
+  "files": ["dist",  "README.md"],
+  "main": "./dist/danger-react.umd.js",
+  "module": "./dist/danger-react.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/danger-react.es.js",
+      "require": "./dist/danger-react.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -33,5 +42,8 @@
     "vite": "^2.9.9",
     "vite-plugin-dts": "^1.4.0",
     "vitest": "^0.17.0"
-  }
+  },
+  "license": "MIT",
+  "author": "chunge",
+  "keywords": []
 }

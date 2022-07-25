@@ -1,18 +1,18 @@
 version: 2.1
-orbs: 
+orbs:
   node: circleci/node@5.0.2
   npm-publisher: uraway/npm-publisher@0.2.0
 
 installPnpm: &installPnpm
   name: Nodejs Version
-  command: | 
+  command: |
     node --version
     npm install -g pnpm
 
 pnpmInstall: &pnpmInstall
   name: pnpm install
   command: pnpm install --no-frozen-lockfile
-    
+
 jobs:
   build:
     executor: node/default
@@ -43,7 +43,6 @@ jobs:
           at: .
       - npm-publisher/publish-from-package-version:
           publish-token-variable: NPM_TOKEN
-        
 
 workflows:
   publish_my_app:
@@ -55,4 +54,4 @@ workflows:
       - publish:
           requires:
             - build
-  
+
