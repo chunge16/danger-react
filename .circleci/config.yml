@@ -26,7 +26,7 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - dist
+            - .
   test:
     executor: node/default
     steps:
@@ -40,9 +40,10 @@ jobs:
     executor: node/default
     steps:
       - attach_workspace:
-          at: dist
+          at: .
       - npm-publisher/publish-from-package-version:
           publish-token-variable: NPM_TOKEN
+          package-path: ./dist
         
 
 workflows:
