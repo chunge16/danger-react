@@ -43,7 +43,6 @@ jobs:
           at: .
       - npm-publisher/publish-from-package-version:
           publish-token-variable: NPM_TOKEN
-          package-path: ./dist
         
 
 workflows:
