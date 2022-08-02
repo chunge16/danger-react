@@ -43,7 +43,8 @@ jobs:
       - attach_workspace:
           at: .
       - npm-publisher/publish-from-package-version:
-          publish-token-variable: NPM_TOKEN
+          publish-token-variable: NPM_TOKE
+      - npm-publisher/push-git-tag
 
 workflows:
   publish_my_app:
