@@ -58,6 +58,6 @@ workflows:
           filters:
             branches:
               only: master # only deploy when on main
-          tags:
-            only: /v[0-9]+(\.[0-9]+)(\.0)/ # only Minor,Major pass
+            tags:
+              only: /v[0-9]+(\.[0-9]+)(\.0)/ # only Minor,Major pass
 
