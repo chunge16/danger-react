@@ -5,6 +5,7 @@
   "files": ["dist",  "README.md"],
   "main": "./dist/danger-react.umd.js",
   "module": "./dist/danger-react.es.js",
+  "types": "./dist/lib/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/danger-react.es.js",
