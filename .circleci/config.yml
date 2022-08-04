@@ -42,10 +42,9 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - npm-publisher/push-git-tag
       - npm-publisher/publish-from-package-version:
           publish-token-variable: NPM_TOKE
-      
+
 
 workflows:
   publish_my_app:
@@ -57,9 +56,9 @@ workflows:
       - publish:
           requires:
             - build
-          filters:
-            # branches:
-            #   only: master # only deploy when on main
+          filters: # publish 不运行分支，只允许tag正则运行
+            branches:
+              ignore: /.*/
             tags:
-              only: /v[0-9]+(\.[0-9]+)(\.0)/ # only Minor,Major pass
+              only: /v[0-9]+(\.[0-9]+)*/
 
