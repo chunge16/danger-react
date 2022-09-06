@@ -8,7 +8,7 @@ installPnpm: &installPnpm
   name: Nodejs Version
   command: |
     node --version
-    npm install -g pnpm
+    sudo npm install -g pnpm
 
 pnpmInstall: &pnpmInstall
   name: pnpm install
@@ -56,9 +56,7 @@ workflows:
       - publish:
           requires:
             - build
-          filters: # publish 不运行分支，只允许tag正则运行
+          filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /v[0-9]+(\.[0-9]+)*/
+              only: master # only deploy when on main
 
