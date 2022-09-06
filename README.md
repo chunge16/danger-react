@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="#" target="_blank" rel="noopener noreferrer">
-    <img src="https://s1.ax1x.com/2022/09/06/v7UzDS.png" alt="Danger React Design logo" />
+    <img width="50%" src="https://s1.ax1x.com/2022/09/06/v7UzDS.png" alt="Danger React Design logo" />
   </a>
 </p>
 
