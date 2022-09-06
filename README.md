@@ -3,7 +3,7 @@
 
 <p align="center">
   <a href="#" target="_blank" rel="noopener noreferrer">
-    <img src="https://s1.ax1x.com/2022/09/05/vTbUBT.md.png" alt="Danger React Design logo" />
+    <img src="https://s1.ax1x.com/2022/09/06/v7UzDS.png" alt="Danger React Design logo" />
   </a>
 </p>
 
@@ -35,8 +35,6 @@
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
-
-
 
 
 [vite]: https://github.com/vitejs/vite
