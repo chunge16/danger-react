@@ -2,7 +2,10 @@
   "name": "danger-react",
   "private": false,
   "version": "0.0.2",
-  "files": ["dist",  "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "main": "./dist/danger-react.umd.js",
   "module": "./dist/danger-react.es.js",
   "types": "./dist/lib/index.d.ts",
@@ -40,7 +43,7 @@
     "postcss": "^8.4.14",
     "postcss-preset-env": "^7.7.2",
     "typescript": "^4.6.3",
-    "vite": "^2.9.9",
+    "vite": "^3.1.0",
     "vite-plugin-dts": "^1.4.0",
     "vitest": "^0.17.0"
   },
