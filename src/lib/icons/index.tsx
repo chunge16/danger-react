@@ -1,24 +1,44 @@
-import React from "react";
+import React, {CSSProperties} from "react";
 import classes from 'classnames';
-
 import './index.css';
 
 interface IconProps extends React.SVGAttributes<SVGElement>{
+  /**
+   * 图标名称
+   */
   name: string;
+  /**
+   * 是否有旋转动画
+   */
   spin?: boolean;
+  /**
+   * 图标旋转角度
+   */
   rotate?: number;
+  /**
+   * 设置图标的样式，例如 fontSize 和 color
+   */
+  style?: CSSProperties
+
+  /**
+   *  设置图标的样式名
+   */
+  className?: string
+
 }
 
-const Icon: React.FunctionComponent<IconProps> = (props) => {
-  const {
-    name,
-    className='',
-    rotate,
-    spin=false,
-    style={},
-    ...restProps
-  } = props;
-
+/**
+ *  Icon图标
+ */
+export const Icon= (
+    {
+      name,
+      rotate,
+      spin=false,
+      className='',
+      style={},
+      ...restProps
+}: IconProps) => {
   let styleObj = rotate
       ? {
         ...style,
@@ -38,4 +58,4 @@ const Icon: React.FunctionComponent<IconProps> = (props) => {
   );
 };
 
-export default Icon;
+

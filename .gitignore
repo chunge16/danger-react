@@ -31,3 +31,6 @@ coverage
 
 # deploy
 deploy.sh
+
+# storybook
+storybook-static
