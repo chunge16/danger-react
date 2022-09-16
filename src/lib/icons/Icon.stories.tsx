@@ -1,11 +1,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import '../../../src/assets/iconfont/iconfont';
+// import '../../../src/assets/iconfont/iconfont';
 
-import { Icon } from '../../lib/index';
+import { Icon } from './index';
 
 export default {
-  title: 'Example/Icon',
+  title: 'Components/Icon',
   component: Icon,
 
 } as ComponentMeta<typeof Icon>

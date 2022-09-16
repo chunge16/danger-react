@@ -52,6 +52,7 @@
     "@vitest/ui": "^0.17.0",
     "babel-loader": "^8.2.5",
     "c8": "^7.11.3",
+    "chromatic": "^6.9.0",
     "happy-dom": "^6.0.2",
     "postcss": "^8.4.14",
     "postcss-preset-env": "^7.7.2",
