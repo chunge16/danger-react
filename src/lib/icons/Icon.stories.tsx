@@ -9,6 +9,8 @@ import {
   Stories,
   PRIMARY_STORY,
 } from '@storybook/addon-docs';
+import { expect, jest} from '@storybook/jest';
+import {userEvent, within} from "@storybook/testing-library";
 
 import { Icon } from './index';
 
@@ -32,7 +34,8 @@ export default {
 
 } as ComponentMeta<typeof Icon>
 
-const Template: ComponentStory<typeof Icon> = (args) => <Icon style={{fontSize: '24px'}} {...args}/>;
+const fn = jest.fn(() => console.log('test icon'))
+const Template: ComponentStory<typeof Icon> = (args) => <Icon onClick={fn} role={'icon'} style={{fontSize: '24px'}} {...args}/>;
 
 
 // Primary
@@ -53,20 +56,6 @@ Default.decorators = [
       </>
   )
 ]
-
-
-Default.storyName = 'I am the primary';
-
-Default.parameters = {
-  backgrounds: {
-    values: [
-      { name: 'red', value: '#f00' },
-      { name: 'green', value: '#0f0' },
-      { name: 'blue', value: '#00f' },
-    ],
-  },
-};
-
 /**************************/
 
 // Name
@@ -87,6 +76,25 @@ export const Rotate = Template.bind({});
 Rotate.args = {
   name: 'iconauto',
   rotate: 90
+}
+
+
+// test
+export const ClickIcon = Template.bind({});
+
+ClickIcon.args = {
+  name: 'iconauto'
+}
+
+ClickIcon.play = async ({canvasElement}) => {
+  const canvas = within(canvasElement);
+
+  const Icon = await canvas.getByRole('icon')
+
+  if (Icon) await userEvent.click(Icon, undefined, { clickCount: 2});
+
+  await userEvent.click(Icon)
+  await expect(fn).toHaveBeenCalledTimes(2);
 }
 
 

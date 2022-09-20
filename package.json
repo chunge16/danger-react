@@ -27,7 +27,8 @@
     "build-storybook": "build-storybook",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
     "build-storybook-docs": "build-storybook --docs",
-    "chromatic": "npx chromatic --project-token=afc20ec9f3b1"
+    "chromatic": "npx chromatic --project-token=afc20ec9f3b1",
+    "test-storybook": "test-storybook -- --watch"
   },
   "dependencies": {
     "classnames": "^2.3.1",
@@ -41,7 +42,9 @@
     "@storybook/addon-interactions": "^6.5.10",
     "@storybook/addon-links": "^6.5.10",
     "@storybook/builder-vite": "^0.2.2",
+    "@storybook/jest": "^0.0.10",
     "@storybook/react": "^6.5.10",
+    "@storybook/test-runner": "^0.7.2",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
