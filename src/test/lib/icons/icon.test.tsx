@@ -2,7 +2,7 @@ import {vi, describe, expect, test} from 'vitest';
 import {render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import Icon from '@/lib/icons';
+import {Icon} from '@/lib/icons';
 
 describe("Icon test", () => {
 

@@ -16,7 +16,7 @@ interface IconProps extends React.SVGAttributes<SVGElement>{
    */
   rotate?: number;
   /**
-   * 设置图标的样式，例如 fontSize 和 color
+   * 设置图标的样式，例如 fontSize 和 color,
    */
   style?: CSSProperties
 
@@ -29,6 +29,7 @@ interface IconProps extends React.SVGAttributes<SVGElement>{
 
 /**
  *  Icon图标
+ *  真的好用
  */
 export const Icon= (
     {

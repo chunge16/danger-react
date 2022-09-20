@@ -1,7 +1,7 @@
 import {forwardRef, useState, useEffect, useLayoutEffect, useImperativeHandle, useRef, Ref} from 'react'
 import logo from './logo.svg'
 import './App.css'
-import Icon from './lib/icons';
+import { Icon } from '@/lib';
 
 function App() {
 
@@ -12,7 +12,5 @@ function App() {
     </div>
   )
 }
-
-
 
 export default App

@@ -1,12 +1,34 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-// import '../../../src/assets/iconfont/iconfont';
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  PRIMARY_STORY,
+} from '@storybook/addon-docs';
 
 import { Icon } from './index';
 
 export default {
   title: 'Components/Icon',
   component: Icon,
+  parameters: {
+    docs: {
+      page: () => (
+          <>
+            <Title />
+            <Subtitle />
+            <Description />
+            <Primary />
+            <ArgsTable story={PRIMARY_STORY} />
+            <Stories />
+          </>
+      ),
+    },
+  },
 
 } as ComponentMeta<typeof Icon>
 
@@ -14,9 +36,9 @@ const Template: ComponentStory<typeof Icon> = (args) => <Icon style={{fontSize: 
 
 
 // Primary
-export const Primary = Template.bind({});
+export const Default = Template.bind({});
 
-Primary.decorators = [
+Default.decorators = [
   () => (
       <>
         <span style={{marginRight: '15px'}}>
@@ -33,7 +55,17 @@ Primary.decorators = [
 ]
 
 
-Primary.storyName = 'I am the primary';
+Default.storyName = 'I am the primary';
+
+Default.parameters = {
+  backgrounds: {
+    values: [
+      { name: 'red', value: '#f00' },
+      { name: 'green', value: '#0f0' },
+      { name: 'blue', value: '#00f' },
+    ],
+  },
+};
 
 /**************************/
 
