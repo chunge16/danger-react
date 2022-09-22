@@ -35,7 +35,7 @@ export default {
 } as ComponentMeta<typeof Icon>
 
 const fn = jest.fn(() => true)
-const Template: ComponentStory<typeof Icon> = (args) => <Icon onClick={() => fn()} role={'icon'} style={{fontSize: '24px'}} {...args}/>;
+const Template: ComponentStory<typeof Icon> = (args) => <Icon onClick={() => fn()} data-testid={'icon'} style={{fontSize: '24px'}} {...args}/>;
 
 
 // Primary
@@ -89,7 +89,7 @@ ClickIcon.args = {
 ClickIcon.play = async ({canvasElement}) => {
   const canvas = within(canvasElement);
 
-  const Icon = await canvas.getByRole('icon')
+  const Icon = await canvas.getByTestId('icon')
 
   if (Icon) await userEvent.click(Icon);
 
