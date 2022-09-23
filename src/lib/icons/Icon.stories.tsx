@@ -34,7 +34,7 @@ export default {
 
 } as ComponentMeta<typeof Icon>
 
-const fn = jest.fn(() => true)
+let fn = jest.fn(() => true)
 const Template: ComponentStory<typeof Icon> = (args) => <Icon onClick={() => fn()} data-testid={'icon'} style={{fontSize: '24px'}} {...args}/>;
 
 
@@ -55,13 +55,29 @@ Default.decorators = [
         </span>
       </>
   )
-]
+];
+
 /**************************/
 
 // Name
 export const Name = Template.bind({});
 Name.args = {
   name: 'iconauto'
+}
+
+Name.play = async ({canvasElement}) => {
+  const canvas = within(canvasElement);
+
+  const icon = await canvas.getByTestId('icon')
+
+  if (!!icon) {
+    await userEvent.click(icon);
+
+    expect(fn).toHaveReturnedTimes(1);
+  }
+
+
+
 }
 
 // spin
@@ -78,23 +94,6 @@ Rotate.args = {
   rotate: 90
 }
 
-
-// test
-export const ClickIcon = Template.bind({});
-
-ClickIcon.args = {
-  name: 'iconauto'
-}
-
-ClickIcon.play = async ({canvasElement}) => {
-  const canvas = within(canvasElement);
-
-  const Icon = await canvas.getByTestId('icon')
-
-  if (Icon) await userEvent.click(Icon);
-
-  await expect(fn).toHaveReturned()
-}
 
 
 
