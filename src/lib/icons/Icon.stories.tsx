@@ -73,10 +73,8 @@ Name.play = async ({canvasElement}) => {
   if (!!icon) {
     await userEvent.click(icon);
 
-    expect(fn).toHaveReturnedTimes(1);
+    expect(fn).toHaveReturned();
   }
-
-
 
 }
 
