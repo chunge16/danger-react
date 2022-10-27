@@ -1,6 +1,7 @@
 
 import '../src/assets/iconfont/iconfont'
 import { themes } from '@storybook/theming';
+import '../src/index.css';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

@@ -59,7 +59,9 @@ Default.decorators = [
 
 /**************************/
 
-// Name
+/**
+ * test Name
+ */
 export const Name = Template.bind({});
 Name.args = {
   name: 'iconauto'
