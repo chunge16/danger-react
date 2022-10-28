@@ -23,12 +23,12 @@ export interface BaseButtonProps {
    * @defaultValue default
    */
   size?: 'mini' | 'small' | 'default' | 'large';
-  // /**
-  //  * @zh 按钮形状，`circle` - 圆形， `round` - 全圆角， `square` - 长方形
-  //  * @en Three button shapes are available: `circle`, `round` and `square`
-  //  * @defaultValue square
-  //  */
-  // shape?: 'circle' | 'round' | 'square';
+  /**
+   * @zh 按钮形状，`circle` - 圆形， `round` - 全圆角， `square` - 长方形
+   * @en Three button shapes are available: `circle`, `round` and `square`
+   * @defaultValue square
+   */
+  shape?: 'circle' | 'round' | 'square';
   // /**
   //  * @zh 添加跳转链接，设置此属性，button表现跟a标签一致
   //  * @en The button behaves like `<a>` with href as target url.

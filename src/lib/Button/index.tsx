@@ -18,6 +18,7 @@ function button(baseProps: ButtonProps){
     type = 'default',
     status ='default',
     size='default',
+    shape = "square",
     loading,
     onClick,
     disabled,
@@ -185,6 +186,7 @@ const Button = styled(button)`
       `;
     }
   }};
+  
 `;
 
 Button.defaultProps = {
@@ -192,6 +194,7 @@ Button.defaultProps = {
   type: 'default',
   size: 'default',
   htmlType: 'button',
+  shape: "square",
 }
 
 export default Button;
