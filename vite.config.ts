@@ -14,14 +14,14 @@ export default defineConfig({
       { find: '@', replacement: path.resolve(__dirname, '/src') }
     ],
   },
-  // test: {
-  //   globals: true,
-  //   environment: 'happy-dom',
-  //   setupFiles: './src/setup.ts',
-  //   coverage: {
-  //     reporter: ['text', 'json', 'html'],
-  //   },
-  // },
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+    setupFiles: './src/setup.ts',
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+    },
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/lib/index.tsx'),

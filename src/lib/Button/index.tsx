@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import theme from '../../theme/theme';
 
 import { ButtonProps } from './interface'
 
@@ -65,29 +66,29 @@ const Button = styled(button)`
   ${baseButtonCss};
   font-size: ${props => {
     switch (props.size) {
-      case 'mini': return 'var(--btn-size-mini-font-size)'
-      case 'small': return "var(--btn-size-small-font-size)"
-      case 'default': return 'var(--btn-size-default-font-size)'
-      case 'large': return "var(--btn-size-large-font-size)";
-      default: return 'var(--btn-size-default-font-size)'
+      case 'mini': return '12px'
+      case 'small':
+      case 'default':
+      case 'large': return '14px';
+      default: return '14px'
     }
   }};
   height: ${props => {
     switch (props.size) {
-      case 'mini': return 'var(--btn-size-mini-height)';
-      case 'small': return  'var(--btn-size-small-height)';
-      case 'default': return 'var(--btn-size-default-height)';
-      case 'large': return 'var(--btn-size-large-height)';
-      default: return 'var(--btn-size-default-height)';
+      case 'mini': return '24px'
+      case 'small': return  '28px';
+      case 'default': return '32px';
+      case 'large': return '36px';
+      default: return '32px'
     }
   }};
   padding: ${props => {
     switch (props.size){
-      case 'mini': return 'var(--btn-size-mini-padding-horizontal)';
-      case 'small': return 'var(--btn-size-small-padding-horizontal)';
-      case 'default': return 'var(--btn-size-default-padding-horizontal)';
-      case 'large': return 'var(--btn-size-large-padding-horizontal)';
-      default: return 'var(--btn-size-default-padding-horizontal)';
+      case 'mini': return '0 11px'
+      case 'small':
+      case 'default': return '0 15px';
+      case 'large': return '0 19px';
+      default: return '0 15px'
     }
   }};
   border-radius: var(--border-radius-small);
@@ -100,7 +101,7 @@ const Button = styled(button)`
           if (props.disabled){
             return 'var(--color-primary-light-3)'
           }else {
-            return 'var(--primary-6))'
+            return 'rgb(var(--primary-6))'
           }
         }};
         color: #fff;
@@ -115,7 +116,7 @@ const Button = styled(button)`
       case 'secondary': return css`
         &:hover {
           border-color: transparent;
-          color: var(--color-text-2);
+          color: ${props => props.theme.colors["color-text-2"]};
           background-color: var(--color-secondary-hover);
         };
         background-color: ${() => {
@@ -127,15 +128,15 @@ const Button = styled(button)`
         }};
         color: ${() => {
           return props.disabled 
-                  ? 'var(--color-text-4)'
-                  : 'var(--color-text-2)'
+                  ? props.theme.colors["color-text-4"]
+                  : props.theme.colors["color-text-2"]
         }};
         border: 1px solid transparent;
       `;
       case 'dashed': return css`
         &:hover {
           border-color: var(--color-neutral-4);
-          color: var(--color-text-2);
+          color: ${props => props.theme.colors["color-text-2"]};
           background-color: var(--color-fill-3)
         };
         background-color: ${() => {
@@ -147,8 +148,8 @@ const Button = styled(button)`
         }};
         color: ${() => {
           return props.disabled
-                  ? 'var(--color-text-4)'
-                  : 'var(--color-text-2)'
+                  ? props.theme.colors["color-text-4"]
+                  : props.theme.colors["color-text-2"]
         }};
         border: 1px dashed var(--color-neutral-3);
       `;
@@ -189,6 +190,7 @@ const Button = styled(button)`
 `;
 
 Button.defaultProps = {
+  theme: theme.light,
   type: 'default',
   size: 'default',
   htmlType: 'button',

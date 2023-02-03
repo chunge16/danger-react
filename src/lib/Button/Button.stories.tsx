@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import theme from "../../theme/theme";
 
 import Button from './index';
 
@@ -14,6 +15,7 @@ export default {
   args: {
     size: 'default',
     htmlType: 'button',
+    theme: theme.light,
     children: 'Button',
   }
 } as ComponentMeta<typeof Button>;
