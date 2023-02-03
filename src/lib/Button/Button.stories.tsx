@@ -8,12 +8,9 @@ export default {
   title: 'Components/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-
-  },
+  argTypes: {},
   args: {
-    size: 'default',
-    htmlType: 'button',
+    ...Button.defaultProps,
     children: 'Button',
   }
 } as ComponentMeta<typeof Button>;
@@ -40,9 +37,18 @@ const SizeTemplate: ComponentStory<typeof Button> = (args) => (
     </div>
 )
 
+const ShapeTemplate: ComponentStory<typeof Button> = (args => (
+    <div>
+      <Button {...args}>+</Button>
+      <Button {...args}  shape={'circle'}>+</Button>
+      <Button {...args}  shape={"round"}>round</Button>
+    </div>
+))
+
+
 export const DefaultButton = Template.bind({});
 DefaultButton.args = {
-  type: "primary",
+  type: "default",
   children: 'Button',
 };
 
@@ -57,6 +63,10 @@ BaseTypeButton.args = {
 /**
  * 按钮形状
  * */
+export const ShapeButton = ShapeTemplate.bind({});
+ShapeButton.args = {
+  type: "primary",
+}
 
 
 /**
@@ -66,7 +76,7 @@ BaseTypeButton.args = {
 export const SizeButton = SizeTemplate.bind({});
 SizeButton.args = {
   children: 'Button',
-  type: "primary"
+  type: "default"
 }
 
 

@@ -70,7 +70,7 @@ body {
     --color-menu-dark-hover: rgba(255, 255, 255, 0.04);
     --color-mask-bg: rgba(29, 33, 41, 0.6);
 }
-body[arco-theme='dark'] {
+body[danger-theme='dark'] {
     --color-black: #000000;
     --color-border: #333335;
     --color-bg-1: #17171a;
@@ -314,7 +314,7 @@ body {
     --warning-9: var(--orange-9);
     --warning-10: var(--orange-10);
 }
-body[arco-theme='dark'] {
+body[danger-theme='dark'] {
     --red-1: 77, 0, 10;
     --red-2: 119, 6, 17;
     --red-3: 161, 22, 31;

@@ -90,9 +90,8 @@ const Button = styled(button)`
       default: return 'var(--btn-size-default-padding-horizontal)';
     }
   }};
-  border-radius: var(--border-radius-small);
+  border-radius: var(--btn-border-radius);
   cursor: ${(props) => props.disabled ? 'not-allowed': 'pointer'};
-  
   ${props => {
     switch (props.type) {
       case 'primary': return css`
@@ -183,6 +182,28 @@ const Button = styled(button)`
                 : 'rgb(var(--primary-6))'}};
         border: 1px solid transparent;
       `;
+    }
+  }};
+  // shape
+  ${props => {
+    switch (props.shape) {
+      case "square": return css`{
+        border-radius: var(--btn-border-radius);
+      }`;
+      case "round": return css`{
+        border-radius: 16px;
+      }`;
+      case "circle": return css`{
+        width: var( --btn-size-default-height);
+        height: var( --btn-size-default-height);
+        text-align: center;
+        padding: 0;
+        border-radius: var(--border-radius-circle);
+      }`;
+      default: return css`{
+        border-radius: var(--btn-border-radius);
+      }`;
+      
     }
   }};
   
