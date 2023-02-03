@@ -100,7 +100,7 @@ const Button = styled(button)`
           if (props.disabled){
             return 'var(--color-primary-light-3)'
           }else {
-            return 'var(--primary-6))'
+            return 'rgb(var(--primary-6))'
           }
         }};
         color: #fff;
