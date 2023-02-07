@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Button from './index';
+import Space from '../Space'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -19,30 +20,30 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 const BaseTypeTemplate: ComponentStory<typeof Button> = (args) => (
-    <div>
+    <Space>
       <Button {...args} type={"primary"}/>
       <Button {...args} type={"secondary"}/>
       <Button {...args} type={"dashed"}/>
       <Button {...args} type={"outline"}/>
       <Button {...args} type={"text"}/>
-    </div>
+    </Space>
 )
 
 const SizeTemplate: ComponentStory<typeof Button> = (args) => (
-    <div>
+    <Space>
       <Button {...args}  size={"mini"}>mini</Button>
       <Button {...args}  size={"small"}>small</Button>
       <Button {...args}  size={"default"}>default</Button>
       <Button {...args}  size={"large"}>large</Button>
-    </div>
+    </Space>
 )
 
 const ShapeTemplate: ComponentStory<typeof Button> = (args => (
-    <div>
+    <Space>
       <Button {...args}>+</Button>
       <Button {...args}  shape={'circle'}>+</Button>
       <Button {...args}  shape={"round"}>round</Button>
-    </div>
+    </Space>
 ))
 
 

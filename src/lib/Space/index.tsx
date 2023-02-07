@@ -16,7 +16,7 @@ const Space = styled(SpaceComponent)`
 `;
 const SpaceItem = styled.div<SpaceProps>`
   margin-right: ${props => {
-    let {size, wrap} = props;
+    let {size} = props;
     if (!size) return 'var(--size-2)';
     if (Array.isArray(size)){
       return getSpaceSizeValue(size[0]);
