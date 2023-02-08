@@ -1,5 +1,5 @@
 const path = require("path");
-const { loadConfigFromFile, mergeConfig } = require("vite");
+const tsconfigPaths = require("vite-tsconfig-paths");
 
 module.exports = {
   "stories": [
@@ -24,15 +24,10 @@ module.exports = {
     "interactionsDebugger": true,
   },
   //fix alias not working  https://github.com/storybookjs/builder-vite/issues/85
-  viteFinal: async (config) => {
-    const { config: userConfig } = await loadConfigFromFile(
-        path.resolve(__dirname, "../vite.config.ts")
-    );
-
-    return mergeConfig(config, {
-      ...userConfig,
-      // manually specify plugins to avoid conflict
-      plugins: [],
-    });
+  async viteFinal(config) {
+    return {
+      ...config,
+      plugins: [...config.plugins, tsconfigPaths.default()],
+    };
   },
 }
