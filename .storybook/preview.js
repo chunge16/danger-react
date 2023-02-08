@@ -1,5 +1,3 @@
-
-import '../src/assets/iconfont/iconfont'
 import { themes } from '@storybook/theming';
 import '../src/index.css';
 
