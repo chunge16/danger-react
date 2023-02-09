@@ -1,62 +1,58 @@
-import React, {CSSProperties} from "react";
-import classes from 'classnames';
+import React from "react";
+import {cs} from '@/helpers/classes'
+import styled, { keyframes, css } from 'styled-components';
+import {IconProps, CustomIconComponentProps} from './interface';
 
-interface IconProps extends React.SVGAttributes<SVGElement>{
-  /**
-   * 图标名称
-   */
-  name: string;
-  /**
-   * 是否有旋转动画
-   */
-  spin?: boolean;
-  /**
-   * 图标旋转角度
-   */
-  rotate?: number;
-  /**
-   * 设置图标的样式，例如 fontSize 和 color,
-   */
-  style?: CSSProperties
+const Icon = styled(IconComponent)`
+  ${props => {
+  return props.spin === true
+      ? css`
+            animation: ${spainAnimation} 1s linear infinite;
+          `
+      :undefined;
+}}
+`
+const spainAnimation = keyframes`
+ to { transform: rotate(360deg) }
+`
 
-  /**
-   *  设置图标的样式名
-   */
-  className?: string
 
+function IconComponent(iconProps: IconProps) {
+  const {
+    className,
+    type,
+    ...rest
+  } = iconProps;
+  const defaultProps = {
+    width: '1em',
+    height: '1em',
+    fill: 'currentColor',
+  };
+
+  const svgProps: CustomIconComponentProps = {
+    ...defaultProps,
+    ...rest,
+  };
+
+  svgProps.className = Array.isArray(className) ? cs(className) : className
+
+  return (<svg {...svgProps}><use xlinkHref={`#${type}`}/></svg>)
 }
 
-/**
- *  Icon图标
- *  真的好用
- */
-export const Icon= (
-    {
-      name,
-      rotate,
-      spin=false,
-      className='',
-      style={},
-      ...restProps
-    }: IconProps) => {
-  let styleObj = rotate
-      ? {
-        ...style,
-        transform: `rotate(${rotate}deg)`
-      }
-      : {
-        ...style,
-      };
 
-  return (
-      <span
-          className={classes('action', {'icon-spin-animation': spin}, className)}
-      >
-          <svg className={'svg-icon'} style={styleObj} {...restProps}><use xlinkHref={`#${name}`}/></svg>
-      </span>
+Icon.defaultProps = {
+  className: undefined,
+  spin: false,
+  type: undefined,
+  style: undefined,
+}
 
-  );
-};
+
+
+export default Icon;
+
+
+
 
 
 
