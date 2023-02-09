@@ -1,4 +1,6 @@
 import { themes } from '@storybook/theming';
+
+import '../src/assets/symbol/index.js'
 import '../src/index.css';
 
 export const parameters = {
