@@ -1,9 +1,6 @@
 import {SVGAttributes, CSSProperties} from 'react';
 
-export interface IconProps extends SVGAttributes<SVGElement>{
-  /**
-   * 节点样式
-   */
+export interface IconProps extends Omit<SVGAttributes<SVGElement>, 'className'> {
   style?: CSSProperties;
   /**
    * 图标类型
@@ -16,7 +13,7 @@ export interface IconProps extends SVGAttributes<SVGElement>{
   // /**
   //  * 节点类名
   //  */
-  // className?: string | string[];
+  className?: string | string[];
 }
 
 

@@ -13,7 +13,7 @@ export default {
   },
 } as ComponentMeta<typeof Icon>
 
-const Template: ComponentStory<typeof Icon> = (args) => <div><Icon {...args}/></div>;
+const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args}/>;
 
 const SpinTemplate: ComponentStory<typeof Icon> = (args) => (
     <Space>
@@ -24,10 +24,13 @@ const SpinTemplate: ComponentStory<typeof Icon> = (args) => (
 );
 
 
-// Primary
+// Default
 export const Default = Template.bind({});
 Default.args = {
-  type: 'danger-icon-apps'
+  type: 'danger-icon-apps',
+  style: {
+    fontSize: '30px'
+  }
 }
 
 /**************************/

@@ -1,26 +1,14 @@
 import React from "react";
-import {cs} from '@/helpers/classes'
-import styled, { keyframes, css } from 'styled-components';
+import {cs} from '@/helpers/classes';
+import classnames from 'classnames';
 import {IconProps, CustomIconComponentProps} from './interface';
+import './index.css';
 
-const Icon = styled(IconComponent)`
-  ${props => {
-  return props.spin === true
-      ? css`
-            animation: ${spainAnimation} 1s linear infinite;
-          `
-      :undefined;
-}}
-`
-const spainAnimation = keyframes`
- to { transform: rotate(360deg) }
-`
-
-
-function IconComponent(iconProps: IconProps) {
+function Icon(iconProps: IconProps) {
   const {
     className,
     type,
+      spin,
     ...rest
   } = iconProps;
   const defaultProps = {
@@ -34,15 +22,19 @@ function IconComponent(iconProps: IconProps) {
     ...rest,
   };
 
-  svgProps.className = Array.isArray(className) ? cs(className) : className
+  let classNames = Array.isArray(className) ? cs(className) : className;
 
-  return (<svg {...svgProps}><use xlinkHref={`#${type}`}/></svg>)
+  if (spin === true) {
+    classNames = classnames(classNames, {'spin-animation': spin})
+  }
+
+  return (<svg {...svgProps} className={classNames}><use xlinkHref={`#${type}`}/></svg>)
 }
 
 
 Icon.defaultProps = {
   className: undefined,
-  spin: false,
+  spin: undefined,
   type: undefined,
   style: undefined,
 }
