@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from './index';
 import dangerIconData from '@/assets/icons/danger-icon.json';
+import './index.css';
 
 function Icons(){
   let {glyphs} = dangerIconData;
@@ -8,29 +9,14 @@ function Icons(){
 
   return (
       <div
-          style={{
-            display: 'flex',
-            flexWrap: "wrap"
-          }}
+          className='Icons-warp'
       >
         {
           glyphs.map(item => {
             return (
                 <div
+                    className="Icons-item"
                     key={item.name}
-                    style={{
-                      width: '7.5rem',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      backgroundColor: '#fff',
-                      color: 'black',
-                      borderRadius: '4px',
-                      marginRight: '8px',
-                      marginBottom: '8px',
-                      padding: '16px',
-                      cursor: 'pointer',
-                    }}
                 >
                   <Icon type={`danger-icon-${item.name}`} />
                   <label htmlFor="id" style={{ marginTop: '8px' }}>

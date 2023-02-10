@@ -7,3 +7,25 @@
  .spin-animation {
      animation: spinAnimation 1s linear infinite;
  }
+
+
+ .Icons-warp {
+     display: flex;
+     flex-wrap: wrap;
+     & .Icons-item {
+         margin-right: 8px;
+         margin-bottom: 8px;
+         padding: 16px;
+         width: 7.5rem;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         background-color: #fff;
+         color: #000;
+         border-radius: 4px;
+         cursor: pointer;
+         &:hover {
+             box-shadow: #e8e8e8 0 0 2px 2px;
+         }
+     }
+ }
