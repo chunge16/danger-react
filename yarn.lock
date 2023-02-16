@@ -6101,11 +6101,6 @@
   "resolved" "https://registry.npmjs.org/es6-shim/-/es6-shim-0.35.7.tgz"
   "version" "0.35.7"
 
-"esbuild-darwin-64@0.15.7":
-  "integrity" "sha512-KGPt3r1c9ww009t2xLB6Vk0YyNOXh7hbjZ3EecHoVDxgtbUlYstMPDaReimKe6eOEfyY4hBEEeTvKwPsiH5WZg=="
-  "resolved" "https://registry.npmjs.org/esbuild-darwin-64/-/esbuild-darwin-64-0.15.7.tgz"
-  "version" "0.15.7"
-
 "esbuild@^0.15.6":
   "integrity" "sha512-7V8tzllIbAQV1M4QoE52ImKu8hT/NLGlGXkiDsbEU5PS6K8Mn09ZnYoS+dcmHxOS9CRsV4IRAMdT3I67IyUNXw=="
   "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.15.7.tgz"

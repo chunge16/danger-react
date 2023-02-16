@@ -5,26 +5,61 @@
   </a>
 </p>
 
-
+<div align="center">
+  <h1>Danger React ⚡</h1>
+  <p>A lightweight React UI library</p>
+</div>
 
 <div align="center">
 
 [![GitHub](https://img.shields.io/github/license/chunge16/danger-react)](https://github.com/chunge16/danger-react/blob/master/LICENSE)
-[![Version](https://img.shields.io/npm/v/danger-react?)](https://www.npmjs.org/package/website-scraper)
-[![Test Coverage](https://codeclimate.com/github/website-scraper/node-website-scraper/badges/coverage.svg)](https://codeclimate.com/github/website-scraper/node-website-scraper/coverage)
 </div>
 
 
-## Danger React Design  ⚡
-<p>A lightweight React UI library</p>
+## 📦 Install
 
-## Dependencies
-| Project               | Status                                                       | Description                                             |
-| --------------------- | ------------------------------------------------------------ | ------------------------------------------------------- |
-| [vite]                | [![vite-status]][vite-package]                               | Next Generation Frontend Tooling                        |
-| [vitest]              | [![vitest-status]][vitest-package]                           | A blazing fast unit test framework powered by Vite.     |                
-| [TypeScript]          | [![TypeScript-status]][TypeScript-package]                   | TypeScript is a language for application-scale JavaScript.                                                       |
-| [react]               | [![react-status]][react-package]                             | React is a JavaScript library for creating user interfaces. |
+Available as an [npm package](https://www.npmjs.com/package/danger-react)
+
+```bash
+// with npm
+npm install danger-react
+
+
+// with yarn
+yarn add danger-react
+
+```
+
+
+## 🔨 Usage
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from 'danger-react';
+import 'danger-react/dist/index.css';
+
+function App() {
+  return (
+    <Button type='secondary'>
+      Hello World
+    </Button>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));
+
+```
+
+
+## TypeScript friendly
+
+All components are written in [TypeScript] so it's type friendly.
+
+# Useful Links
+
+* [Storybook](https://63241b444716e4a4b65a4743-gwdicmpdbw.chromatic.com/)
+
 
 ## Questions
 [Questions](https://github.com/chunge16/danger-react/issues)
@@ -32,7 +67,7 @@
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT)
+This project is [MIT licensed](./LICENSE).
 
 
 [vite]: https://github.com/vitejs/vite

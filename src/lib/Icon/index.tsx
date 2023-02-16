@@ -2,6 +2,7 @@ import React from "react";
 import {cs} from '@/helpers/classes';
 import classnames from 'classnames';
 import {IconProps, CustomIconComponentProps} from './interface';
+import "@/assets/symbol/index";
 import './index.css';
 
 function Icon(iconProps: IconProps) {

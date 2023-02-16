@@ -34,3 +34,7 @@ deploy.sh
 
 # storybook
 storybook-static
+
+# yalc
+.yalc
+.yalc.lock

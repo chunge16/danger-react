@@ -3,17 +3,17 @@
   "private": false,
   "version": "0.0.2",
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "main": "./dist/danger-react.umd.js",
-  "module": "./dist/danger-react.es.js",
+  "module": "./dist/danger-react.mjs",
   "types": "./dist/lib/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/danger-react.es.js",
+      "import": "./dist/danger-react.mjs",
       "require": "./dist/danger-react.umd.js"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "scripts": {
     "dev": "vite",
@@ -29,6 +29,7 @@
   "dependencies": {
     "@types/styled-theming": "^2.2.5",
     "classnames": "^2.3.1",
+    "danger-react": "file:.yalc/danger-react",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "styled-components": "^5.3.6",
@@ -71,5 +72,8 @@
   },
   "license": "MIT",
   "author": "chunge",
-  "keywords": []
+  "keywords": [],
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  }
 }
