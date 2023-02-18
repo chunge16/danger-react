@@ -29,7 +29,6 @@
   "dependencies": {
     "@types/styled-theming": "^2.2.5",
     "classnames": "^2.3.1",
-    "danger-react": "file:.yalc/danger-react",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "styled-components": "^5.3.6",

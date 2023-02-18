@@ -13,6 +13,10 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-coverage',
     'storybook-dark-mode',
+    {
+      name: "@storybook/addon-docs",
+      options: { transcludeMarkdown: true },
+    },
 
   ],
   "framework": "@storybook/react",
